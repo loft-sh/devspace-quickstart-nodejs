@@ -1,5 +1,6 @@
 FROM node:8.11.4
 
+# Create project directory (workdir)
 RUN mkdir /app
 WORKDIR /app
 
