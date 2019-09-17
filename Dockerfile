@@ -3,11 +3,14 @@ FROM node:8.11.4
 RUN mkdir /app
 WORKDIR /app
 
+# Add package.json to WORKDIR and install dependencies
 COPY package.json .
 RUN npm install
 
+# Add the remaining source code files to WORKDIR
 COPY . .
 
 EXPOSE 3000
 
+# Start nodemon for hot reloading (will watch for file changes and then rebuild & restart the application)
 CMD ["npm", "run", "dev"]
