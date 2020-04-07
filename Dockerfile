@@ -5,7 +5,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # Add package.json to WORKDIR and install dependencies
-COPY package.json .
+COPY package.json package-lock.json ./
 RUN npm install
 
 # Add source code files to WORKDIR
