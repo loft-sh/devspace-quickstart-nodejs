@@ -1,17 +1,23 @@
-FROM node:8.11.4
+FROM node:13.12.0-alpine
 
-# Create project directory (workdir)
+# Set working directory
 RUN mkdir /app
 WORKDIR /app
 
 # Add package.json to WORKDIR and install dependencies
-COPY package.json .
+COPY package.json package-lock.json ./
 RUN npm install
 
-# Add the remaining source code files to WORKDIR
+# Add source code files to WORKDIR
 COPY . .
 
+# Application port (optional)
 EXPOSE 3000
 
-# Start nodemon for hot reloading (will watch for file changes and then rebuild & restart the application)
-CMD ["npm", "run", "dev"]
+# Debugging port (optional)
+# For remote debugging, add this port to devspace.yaml: dev.ports[*].forward[*].port: 9229
+EXPOSE 9229
+
+# Container start command
+# To start using nodemon + debugger, configure this in devspace.yaml: images.*.cmd: ["npm", "run", "dev"]
+CMD ["npm", "start"]
