@@ -1,7 +1,6 @@
 FROM node:13.12.0-alpine
 
 # Set working directory
-RUN mkdir /app
 WORKDIR /app
 
 # Add package.json to WORKDIR and install dependencies
