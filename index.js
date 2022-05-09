@@ -10,14 +10,9 @@ app.get('/', (req, res) => {
         </head>
         <body>
             <img src="https://devspace.sh/images/congrats.gif" />
-            <h1>You deployed this project with DevSpace!</h1>
+            <h1>We deployed this project with DevSpace!!</h1>
             <div>
-                <h2>Now it's time to code:</h2>
-                <ol>
-                    <li>Edit this text in <code>index.js</code> and save the file</li>
-                    <li>Check the logs to see how DevSpace restarts your container</li>
-                    <li>Reload browser to see the changes</li>
-                </ol>
+                <h2>Now it's time to code</h2>
             </div>
         </body>
     </html>
